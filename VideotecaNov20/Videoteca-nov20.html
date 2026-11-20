@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Videoteca</title>
+</head>
+<body>
+	<script>
+		let Az = [];
+		let Cm = [];
+	    let Th = [];
+		let An = [];
+		let tutti = [];
+		let dec81 = [];
+		let dec91 = [];
+		let dec01 = [];						
+		let dec11 = [];
+		let altri = [];			
+		
+		let continua = true;
+	    let film;
+		let genere;
+		let anno;
+		
+		
+		while (continua) {
+			film = prompt("Titolo del Film (STOP per terminare):");
+			
+			switch (film) {
+			case "STOP":
+			    continua = false;
+			    break;
+
+		    default:
+			genere = prompt("Inserisci il genere di " + film + " (Az = Azione, Cm = Commedia, Th = Thriller, An = Animazione ) : ");
+			anno = prompt("Inserisci l'anno di uscita del film (dal 1981 fino a...) ");
+			
+			switch(genere) {
+				case "Az":
+				Az.push(film);
+				tutti.push(film);
+				   break; 
+				case "Cm":
+				Cm.push(film);
+				tutti.push(film);
+				   break; 
+				case "Th":
+				Th.push(film);
+				tutti.push(film);
+				   break;
+				case "An":
+				An.push(film);
+				tutti.push(film);
+				   break;
+				default: 
+				alert("Film non inserito, categoria non disponibile");
+				   
+			    
+			    }
+				if (anno >= 1981 && anno <= 1990 ){
+					dec81.push(film);
+				} else if (anno >= 1991 && anno <= 2000){
+					dec91.push(film);
+				} else if (anno >= 2001 && anno <= 2010){
+					dec01.push(film);
+				} else if (anno >= 2011 && anno <= 2020){
+					dec11.push(film);
+				}	else {
+				    altri.push(film);
+			
+			}
+	     }
+      }
+
+	    
+		document.write("<h3>Film di azione</h3>");
+		document.write("<ul>");
+		for (let i = 0; i < Az.length; i++) {
+		    document.write("<li>" + Az[i] + "</li>");
+		}
+		document.write("</ul>");
+		
+		document.write("<h3>Film commedia</h3>");
+		document.write("<ul>");
+		for (let i = 0; i < Cm.length; i++) {
+		    document.write("<li>" + Cm[i] + "</li>");
+		}
+		document.write("</ul>");
+		
+		document.write("<h3>Film thriller</h3>");
+		document.write("<ul>");
+		for (let i = 0; i < Th.length; i++) {
+		    document.write("<li>" + Th[i] + "</li>");
+		}
+		document.write("</ul>");
+		
+		document.write("<h3>Film animazione</h3>");
+		document.write("<ul>");
+		for (let i = 0; i < An.length; i++) {
+		    document.write("<li>" + An[i] + "</li>");
+		}
+		document.write("</ul>");
+		
+		document.write("Sono stati inseriti : " + tutti.length + " film! " + "<br />");
+		
+		document.write("Sono stati inseriti : " + Az.length + " film d'Azione " + "<br />");
+	    document.write("Sono stati inseriti : " + Cm.length + " film di Commedia " + "<br />");
+		document.write("Sono stati inseriti : " + Th.length + " film Thriller " + "<br />");
+		document.write("Sono stati inseriti : " + An.length + " film d'Animazione " + "<br />");		 
+	 
+		document.write("Sono stati inseriti : " + dec81.length + " Film usciti tra il 1981 e il 1990 " + "<br />");
+		document.write("Sono stati inseriti : " + dec91.length + " Film usciti tra il 1991 e il 2000 " + "<br />");
+		document.write("Sono stati inseriti : " + dec01.length + " Film usciti tra il 2001 e il 2010 " + "<br />");
+		document.write("Sono stati inseriti : " + dec11.length + " Film usciti tra il 2011 e il 2020 " + "<br />");	
+		
+		document.write("Sono stati inseriti : " + altri.length + " Film usciti Prima del 1981 e dopo il 2020 " + "<br />");	
+	
+	
+	</script>
+</body>
+</html>
